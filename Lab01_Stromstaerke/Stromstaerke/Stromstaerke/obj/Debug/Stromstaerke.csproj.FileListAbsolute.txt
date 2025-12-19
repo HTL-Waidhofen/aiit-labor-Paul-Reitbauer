@@ -1,0 +1,8 @@
+C:\Users\paulr\OneDrive\Desktop\3AHET\Labor\ZS\Lab01_Stromstaerke\Stromstaerke\Stromstaerke\bin\Debug\Stromstaerke.exe.config
+C:\Users\paulr\OneDrive\Desktop\3AHET\Labor\ZS\Lab01_Stromstaerke\Stromstaerke\Stromstaerke\bin\Debug\Stromstaerke.exe
+C:\Users\paulr\OneDrive\Desktop\3AHET\Labor\ZS\Lab01_Stromstaerke\Stromstaerke\Stromstaerke\bin\Debug\Stromstaerke.pdb
+C:\Users\paulr\OneDrive\Desktop\3AHET\Labor\ZS\Lab01_Stromstaerke\Stromstaerke\Stromstaerke\obj\Debug\Stromstaerke.csproj.AssemblyReference.cache
+C:\Users\paulr\OneDrive\Desktop\3AHET\Labor\ZS\Lab01_Stromstaerke\Stromstaerke\Stromstaerke\obj\Debug\Stromstaerke.csproj.CoreCompileInputs.cache
+C:\Users\paulr\OneDrive\Desktop\3AHET\Labor\ZS\Lab01_Stromstaerke\Stromstaerke\Stromstaerke\obj\Debug\Stromstaerke.exe
+C:\Users\paulr\OneDrive\Desktop\3AHET\Labor\ZS\Lab01_Stromstaerke\Stromstaerke\Stromstaerke\obj\Debug\Stromstaerke.pdb
+C:\Users\paulr\OneDrive\Desktop\3AHET\Labor\ZS\Lab01_Stromstaerke\Stromstaerke\Stromstaerke\obj\Debug\Stromstaerke.exe.config
