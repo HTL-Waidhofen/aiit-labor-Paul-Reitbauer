@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -62,6 +63,35 @@ namespace Lab03_Quader
         {
             return hoehe * breite * laenge;
         }
+
+        public void DrawFootprint()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+
+            for (int i = 0; i < laenge; i++)
+            {
+                Console.Write("*");
+            }
+
+            for (int i = 0; i < breite - 2; i++)
+            {
+                Console.WriteLine();
+                Console.Write("*");
+                for (int j = 0; j < laenge - 2; j++)
+                {
+                    Console.Write(" ");
+                }
+                Console.Write("*");
+            }
+            Console.WriteLine();
+            for (int a = 0; a < laenge; a++)
+            {
+                Console.Write("*");
+            }
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine();
+
+        }
     }
 
 
@@ -74,6 +104,18 @@ namespace Lab03_Quader
             string eingabe = Console.ReadLine();
 
             Quader q = Quader.Parse(eingabe);   //Klassenmethode
+            q.DrawFootprint();
+
+            Random random = new Random();
+            List<Quader> list = new List<Quader>();
+            for (int i = 0; i < 10; i++)
+            {
+                list.Add(new Quader(
+                    random.Next(10, 20),   //Hoehe
+                    random.Next(10, 20),   //Breite
+                    random.Next(10, 20))); //Laenge
+                list [i].DrawFootprint();
+            }
 
             Console.WriteLine($"Volume des Quaders: {q.GetVolume()} mm³");
             Console.ReadKey();
