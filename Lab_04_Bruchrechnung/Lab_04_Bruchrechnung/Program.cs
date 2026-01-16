@@ -6,79 +6,6 @@ using System.Threading.Tasks;
 
 namespace Lab_04_Bruchrechnung
 {
-    class Bruch 
-    {
-        private int zaehler;
-        private int nenner;
-
-        public Bruch(int zaehler, int nenner)
-        {
-            this.zaehler = zaehler;
-            this.nenner = nenner;
-        }
-
-        public int getZaehler()
-        {
-            return zaehler;
-        }
-
-        public override string ToString()
-        {
-            return $"{zaehler} / {nenner}";
-        }
-
-        public int getNenner()
-        {
-           return nenner;
-        }
-
-        public void setZaehler(int zaehler)
-        {
-            this.zaehler = zaehler;
-        }
-
-        public void setNenner(int nenner)
-        {
-            if(nenner == 0)
-            {
-                throw new Exception();
-            }
-            this.nenner = nenner;
-        }
-
-        public void Kuerzen()
-        {
-            // 28-35
-
-            int kleinster = Math.Min(zaehler, nenner);
-            for (int i = kleinster; i > 1; i--)
-            {
-                if(zaehler % i == 0 && nenner % i == 0)
-                {
-                    zaehler /= i;
-                    nenner /= i;
-                    break;
-                }
-            }
-        }
-
-        public static Bruch Parse(string str)
-        {
-            string[] teile = str.Split('/');
-            int zaehler = int.Parse(teile[0]);
-            int nenner = int.Parse(teile[1]);
-            return new Bruch(zaehler, nenner);
-        }
-
-        public void Add(Bruch b)
-        {
-            int n = this.nenner * b.getNenner();
-            int z = this.zaehler * b.getNenner() + b.getZaehler() * this.nenner;
-            this.zaehler = z;
-            this.nenner = n;
-            Kuerzen();
-        }
-    }
     internal class Program
     {
         static void Main(string[] args)
@@ -92,7 +19,28 @@ namespace Lab_04_Bruchrechnung
             Bruch b1 = Bruch.Parse(line1);
             Bruch b2 = Bruch.Parse(line2);
 
-            b1.Add(b2);
+            Console.WriteLine($"Wie wollen sie rechnen +, - , *, /");
+            string operation = Console.ReadLine();
+
+            switch (operation)
+            {
+                case "+":
+                    b1.Add(b2);
+                    break;
+                case "-":
+                    b1.Subtract(b2);
+                    break;
+                case "*":
+                    b1.Multiply(b2);
+                    break;
+                case "/":
+                    b1.Divide(b2);
+                    break;
+                default:
+                    Console.WriteLine("Ungultige Eingabe");
+                    break;
+            }
+
             Console.WriteLine($"Gekurtzter Bruch = {b1}");
 
             Console.WriteLine();
