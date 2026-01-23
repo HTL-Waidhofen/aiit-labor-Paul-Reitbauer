@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{59761FF8-5E01-444F-88BB-F5BFAA41221C}</ProjectGuid>
+    <ProjectGuid>{4F9CA99C-1D12-464D-B675-2DDEAFD5AA89}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Lab_04_Bruchrechnung</RootNamespace>
-    <AssemblyName>Lab_04_Bruchrechnung</AssemblyName>
+    <RootNamespace>Lab_05_QuaderSteuern</RootNamespace>
+    <AssemblyName>Lab_05_QuaderSteuern</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bruch.cs" />
-    <Compile Include="Bruchrechnung.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
