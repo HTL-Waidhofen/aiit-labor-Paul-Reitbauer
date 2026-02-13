@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36930.0 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab06_Labyrinth", "Lab06_Labyrinth\Lab06_Labyrinth.csproj", "{C989585E-6276-4133-AAE1-CC162ADF0C4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Example\Example.csproj", "{28579DD7-8854-46B4-BFF8-64949D8862B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C989585E-6276-4133-AAE1-CC162ADF0C4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C989585E-6276-4133-AAE1-CC162ADF0C4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C989585E-6276-4133-AAE1-CC162ADF0C4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C989585E-6276-4133-AAE1-CC162ADF0C4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28579DD7-8854-46B4-BFF8-64949D8862B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28579DD7-8854-46B4-BFF8-64949D8862B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28579DD7-8854-46B4-BFF8-64949D8862B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28579DD7-8854-46B4-BFF8-64949D8862B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F4C8945-5F31-4425-BC8B-C692907D86A6}
+	EndGlobalSection
+EndGlobal

@@ -8,19 +8,19 @@ namespace Lab_05_QuaderSteuern
 {
     internal class RectangleShape
     {
-        public int X { get; private set; }
-        public int Y { get; private set; }
-        public int Width { get; }
-        public int Height { get; }
+        public int X;
+        public int Y;
+        public int Width;
+        public int Height;
         private readonly char _horizontal;
         private readonly char _vertical;
         private readonly char _corner;
         private readonly char _fill;
 
         public RectangleShape(int x, int y, int width, int height,
-            char horizontal = '-',
-            char vertical = '|',
-            char corner = '+',
+            char horizontal = '*',
+            char vertical = '*',
+            char corner = '*',
             char fill = ' ')
         {
             X = x;
@@ -35,7 +35,7 @@ namespace Lab_05_QuaderSteuern
 
         public void Move(int dx, int dy, int maxWidth, int maxHeight, int reservedBottom = 1)
         {
-            // Clamp new position so the rectangle stays visible inside console window.
+          
             var maxX = Math.Max(0, maxWidth - Width);
             var maxY = Math.Max(0, maxHeight - Height - reservedBottom);
             X = Clamp(X + dx, 0, maxX);
@@ -44,7 +44,7 @@ namespace Lab_05_QuaderSteuern
 
         public bool Intersects(int x, int y, int width, int height)
         {
-            // Axis-aligned rectangle intersection (inclusive bounds)
+            
             int ax1 = x;
             int ay1 = y;
             int ax2 = x + width - 1;
@@ -60,7 +60,7 @@ namespace Lab_05_QuaderSteuern
 
         public void Draw()
         {
-            // Draw top line
+            
             if (Height == 1)
             {
                 DrawHorizontalLine(Y);
@@ -71,13 +71,13 @@ namespace Lab_05_QuaderSteuern
             DrawHorizontals(X + 1, Y, Width - 2);
             if (Width > 1) DrawCorner(X + Width - 1, Y);
 
-            // Draw middle lines
+            
             for (int row = Y + 1; row < Y + Height - 1; row++)
             {
                 DrawVerticals(row);
             }
 
-            // Draw bottom line
+            
             if (Height > 1)
             {
                 DrawCorner(X, Y + Height - 1);
@@ -141,7 +141,7 @@ namespace Lab_05_QuaderSteuern
             }
             catch (ArgumentOutOfRangeException)
             {
-                // Ignore drawing outside visible area
+                
             }
         }
 
