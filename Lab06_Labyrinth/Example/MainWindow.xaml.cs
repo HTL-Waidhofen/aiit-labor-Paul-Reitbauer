@@ -21,6 +21,7 @@ namespace Example
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Figur figur = null;
         public MainWindow()
         {
             InitializeComponent();
@@ -48,7 +49,32 @@ namespace Example
                         Spielfeld.Children.Add(c1);
 
                     }
+                    else if (c == '#')
+                    {
+                         figur = new Figur(i, j);
+                         Canvas.SetTop(figur.GetEllipse(), i * 20);
+                    }
                 }
+            }
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+            {
+                if (e.Key == Key.Left)
+                {
+                    figur.Bewegen(1, 0);
+                }
+                else if (e.Key == Key.Right)
+                {
+                    figur.Bewegen(20, 0);
+                }
+                else if (e.Key == Key.Up)
+                {
+                    figur.Bewegen(0, -20);
+                }
+                else if (e.Key == Key.Down)
+                {
+                    figur.Bewegen(0, 20);
             }
         }
     }
