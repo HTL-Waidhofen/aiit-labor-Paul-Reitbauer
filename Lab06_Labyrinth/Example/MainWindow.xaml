@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Example"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    KeyDown="Window_KeyDown"
+  
 
     <StackPanel Orientation="Horizontal">
         <Button Margin= "10">Button1</Button>
@@ -14,9 +14,7 @@
         <Button Margin= "10">Button3</Button>
 
         <Canvas  x:Name="Spielfeld" Background="BlueViolet" Width="400" Height="400">
-            <Canvas Canvas.Top="50" Canvas.Left="50" Background="BlanchedAlmond" Width="50" Height="50"></Canvas>
-            <Canvas Canvas.Top="100" Canvas.Left="50" Background="BlanchedAlmond" Width="50" Height="50"></Canvas>
-            <Canvas Canvas.Top="50" Canvas.Left="100" Background="BlanchedAlmond" Width="50" Height="50"></Canvas>
+            
         </Canvas>
     </StackPanel>
     
