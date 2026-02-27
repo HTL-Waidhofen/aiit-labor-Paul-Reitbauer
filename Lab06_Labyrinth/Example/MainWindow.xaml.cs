@@ -29,6 +29,7 @@ namespace Example
             StreamReader reader = new StreamReader("maze_6x6.txt");
             string inhalt = reader.ReadToEnd();
             string[] zeilen = inhalt.Split('\n');
+            
 
             this.Spielfeld.Background = Brushes.White;
 
@@ -49,32 +50,39 @@ namespace Example
                         Spielfeld.Children.Add(c1);
 
                     }
-                    else if (c == '#')
+                    else if (c == 'X')
                     {
-                         figur = new Figur(i, j);
-                         Canvas.SetTop(figur.GetEllipse(), i * 20);
+                        figur = new Figur(j * 20, i * 20);
+                        Spielfeld.Children.Add(figur.GetEllipse());
+                        Canvas.SetLeft(figur.GetEllipse(), j * 20);
+                        Canvas.SetTop(figur.GetEllipse(), i * 20);
                     }
+
+                  
                 }
+
+
             }
         }
+        
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
             {
                 if (e.Key == Key.Left)
                 {
-                    figur.Bewegen(1, 0);
+                    figur.Bewegen(-1, 0);
                 }
                 else if (e.Key == Key.Right)
                 {
-                    figur.Bewegen(20, 0);
+                    figur.Bewegen(1, 0);
                 }
                 else if (e.Key == Key.Up)
                 {
-                    figur.Bewegen(0, -20);
+                    figur.Bewegen(0, -1);
                 }
                 else if (e.Key == Key.Down)
                 {
-                    figur.Bewegen(0, 20);
+                    figur.Bewegen(0, 1);
             }
         }
     }
