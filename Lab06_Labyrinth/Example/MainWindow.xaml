@@ -9,12 +9,7 @@
         KeyDown="Window_KeyDown">
 
     <StackPanel Orientation="Horizontal">
-        
-        
-
-        <Canvas  x:Name="Spielfeld" Background="BlueViolet" Width="400" Height="400">
-            
-        </Canvas>
+        <Canvas  x:Name="Spielfeld" Background="BlueViolet" Width="400" Height="400"/>
     </StackPanel>
     
 </Window>

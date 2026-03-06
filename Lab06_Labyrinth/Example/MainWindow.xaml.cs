@@ -70,19 +70,19 @@ namespace Example
             {
                 if (e.Key == Key.Left)
                 {
-                    figur.Bewegen(-1, 0);
+                    figur.Bewegen(-5, 0);
                 }
                 else if (e.Key == Key.Right)
                 {
-                    figur.Bewegen(1, 0);
+                    figur.Bewegen(5, 0);
                 }
                 else if (e.Key == Key.Up)
                 {
-                    figur.Bewegen(0, -1);
+                    figur.Bewegen(0, -5);
                 }
                 else if (e.Key == Key.Down)
                 {
-                    figur.Bewegen(0, 1);
+                    figur.Bewegen(0, 5);
             }
         }
     }
