@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,24 +14,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.IO;
 
 namespace Example
 {
-    /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
-    /// </summary>
+    
     public partial class MainWindow : Window
     {
+
+        string[] zeilen;
+
         private Figur figur = null;
         public MainWindow()
         {
             InitializeComponent();
 
-            StreamReader reader = new StreamReader("maze_6x6.txt");
-            string inhalt = reader.ReadToEnd();
-            string[] zeilen = inhalt.Split('\n');
-            
+            string inhalt = File.ReadAllText("maze_10x10.txt");
+            this.zeilen = inhalt.Split('\n'); // <- keine lokale Variable, Feld wird gesetzt
 
             this.Spielfeld.Background = Brushes.White;
 
@@ -66,23 +66,28 @@ namespace Example
         }
         
 
+
+
+
+
+
         private void Window_KeyDown(object sender, KeyEventArgs e)
             {
-                if (e.Key == Key.Left)
-                {
-                    figur.Bewegen(-5, 0);
-                }
-                else if (e.Key == Key.Right)
-                {
-                    figur.Bewegen(5, 0);
-                }
-                else if (e.Key == Key.Up)
-                {
-                    figur.Bewegen(0, -5);
-                }
-                else if (e.Key == Key.Down)
-                {
-                    figur.Bewegen(0, 5);
+            if (e.Key == Key.Left)
+            {
+                figur.Bewegen(-20, 0, zeilen);
+            }
+            else if (e.Key == Key.Right)
+            {
+                figur.Bewegen(20, 0, zeilen);
+            }
+            else if (e.Key == Key.Up)
+            {
+                figur.Bewegen(0, -20, zeilen);
+            }
+            else if (e.Key == Key.Down)
+            {
+                figur.Bewegen(0, 20, zeilen);
             }
         }
     }

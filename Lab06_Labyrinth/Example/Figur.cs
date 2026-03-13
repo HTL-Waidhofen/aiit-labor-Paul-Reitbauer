@@ -29,12 +29,31 @@ namespace Example
             Canvas.SetTop(geometrie, y);
         }
 
-        public void Bewegen(int dx, int dy)
+        public void Bewegen(int dx, int dy, string[] zeilen)
         {
-            x += dx;
-            y += dy;
-            Canvas.SetLeft(geometrie, x);
-            Canvas.SetTop(geometrie, y);
+            int neueX = x + dx;
+            int neueY = y + dy;
+
+            // Mittelpunkt der Figur verwenden, damit Kollision mit Zellen korrekt erkannt wird
+            int centerX = neueX + breite;
+            int centerY = neueY + hoehe ;
+
+            int col = centerX /20;
+            int row = centerY /20;
+
+            
+            if (row <= 0 || row >= zeilen.Length) return;
+            string mazeRow = zeilen[row].Replace("\r", "");
+            if (col < 0 || col >= mazeRow.Length) return;
+
+            
+            if (mazeRow[col] != '#')
+            {
+                x = neueX;
+                y = neueY;
+                Canvas.SetLeft(geometrie, x);
+                Canvas.SetTop(geometrie, y);
+            }
         }
         public Ellipse GetEllipse()
         {
